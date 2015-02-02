@@ -1,0 +1,10 @@
+[prod]
+prod.webapp.com ansible_ssh_host=<ip>
+
+[stage]
+stage.webapp.com ansible_ssh_host=<ip>
+
+[ec2:children]
+prod
+stage
+

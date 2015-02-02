@@ -1,0 +1,14 @@
+---
+
+ssh_user: vagrant
+
+# Security settings
+fail2ban_ignoreip: 127.0.0.1/8
+fail2ban_bantime: 1
+fail2ban_maxretry: 10
+
+# Swapfile settings
+swapon: false
+
+# Monitoring agent settings
+install_newrelic_server: false

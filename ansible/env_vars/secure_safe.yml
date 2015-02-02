@@ -1,0 +1,15 @@
+aws_access_key_id:
+aws_secret_access_key:
+
+newrelic_key:
+
+ssl_crt: |
+
+
+ssl_key: |
+
+
+git_ssh_pub_key: |
+
+
+git_ssh_priv_key: |

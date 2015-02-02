@@ -1,0 +1,16 @@
+---
+
+ssh_user: ubuntu
+
+# Security settings
+fail2ban_ignoreip: 127.0.0.1/8 50.250.17.94
+fail2ban_bantime: 600
+fail2ban_maxretry: 3
+
+# Swap settings
+swapon: true
+swapfile_swappiness: 10
+swapfile_size: 512MB
+
+# Monitoring agent settings
+install_newrelic_server: true

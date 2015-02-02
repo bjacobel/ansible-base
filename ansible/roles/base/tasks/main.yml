@@ -1,0 +1,42 @@
+---
+
+- name: Ensure bash, OpenSSl, and libssl are the latest versions
+  apt: name={{ item }} update_cache={{ update_apt_cache }} state=latest
+  with_items:
+    - bash
+    - openssl
+    - libssl-dev
+    - libssl-doc
+  tags: packages
+
+- name: Install base packages
+  apt: name={{ item }} update_cache={{ update_apt_cache }} force=yes state=installed
+  with_items:
+    - build-essential
+    - ntp
+    - htop
+    - git
+    - supervisor
+    - nginx
+  tags: packages
+
+- name: Uninstall undesired packages
+  apt: name={{ item }} update_cache={{update_apt_cache}} force=yes state=absent
+  with_items:
+    - landscape-client
+    - landscape-client-ui
+    - landscape-client-ui-install
+    - landscape-common
+  tags: packages
+
+- name: Remove undesired MOTD segments
+  file: path={{item}} state=absent
+  sudo: yes
+  with_items:
+    - /etc/update-motd.d/50-landscape-sysinfo
+    - /etc/update-motd.d/51-cloudguest
+
+- include: security.yml tags=security
+
+- include: monitoring.yml tags=monitoring
+  when: install_newrelic_server
