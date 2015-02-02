@@ -4,9 +4,5 @@ git_repo: ssh://git@github.com/user/webapp.git
 branch: master
 
 application_name: webapp
-project_name: webapp
 
 ssl_dest_dir: /etc/ssl
-
-db_user: "{{ application_name }}"
-db_name: "{{ application_name }}"
