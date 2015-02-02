@@ -25,7 +25,7 @@ Full contents of base playbook:
     - `memcached`
     - `nginx`
 - Uninstalls
-    - `[landscape](https://landscape.canonical.com/)`
+    - [`landscape`](https://landscape.canonical.com/)
 - Configures
     - All incoming TCP connections are blocked except on ports 22, 80, and 443
     - Fail2ban is configured to block failed SSH connections from unknown IPs for 10 minutes after 3 failures
